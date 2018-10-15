@@ -13,7 +13,7 @@ for arquivo = arquivos(3:end)'
     [medidor,fMin,fMax] = strread(char(arquivoF),'L02_M%u_%u-%u');
     dados = dlmread(strcat(dir,'/',char(arquivo)))(5:end,1);
     delta_freq = (fMax-fMin);
-    freqs = delta_freq.*(1:700)./700 + fMin;
+    freqs = linspace(fMin,fMax,700);
     figure(1);
     size(freqs);
     size(dados);
